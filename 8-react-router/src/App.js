@@ -1,6 +1,6 @@
 import './App.css';
 
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 //pages
 import Home from './components/Home';
@@ -27,11 +27,11 @@ function App() {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        {/* <Switch>
+        <Switch>
+          <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/users" component={Users} />
-          <Route path="/" component={Home} />
-        </Switch> */}
+        </Switch>
       </div>
     </Router>
   );
