@@ -1,8 +1,12 @@
 .App {
-  text-align: center;
-  background-color: #282c34;
+  margin-left: 10px;
   min-height: 100vh;
-  color: #fff;
+  list-style: none;
+  
+}
+
+.test{
+  font-weight: 625;
 }
 
 
