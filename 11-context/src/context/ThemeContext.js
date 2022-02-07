@@ -1,16 +1,22 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 const ThemeContext = createContext();
 
-export const TeamProvider = ({children}) =>{
-    const[theme, setTheme] = useState('dark')
+export const TeamProvider = ({ children }) => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light"); // locastorage de birşey yoksa default olarak light versin
 
-    const values = {
-        theme,
-        setTheme,
-    }
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]); // localstorageye kaydetmek için
 
-    return <ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>
-}
+  const values = {
+    theme,
+    setTheme,
+  };
 
-export default ThemeContext;
+  return (
+    <ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => useContext(ThemeContext);

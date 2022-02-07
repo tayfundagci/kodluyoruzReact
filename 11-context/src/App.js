@@ -1,13 +1,15 @@
 import "./App.css";
 import { TeamProvider } from "./context/ThemeContext";
-import Button from "./components/Button";
-import Header from "./components/Header";
+import { UserProvider } from "./context/UserContext";
+
+import Container from "./components/Container";
 
 function App() {
   return (
     <TeamProvider>
-      <Header />
-      <Button />
+      <UserProvider>
+        <Container />
+      </UserProvider>
     </TeamProvider>
   );
 }
