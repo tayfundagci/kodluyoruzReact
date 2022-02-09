@@ -11,7 +11,7 @@ function Palatte({ activeColor }) {
         value={activeColor}
         onChange={(e) => setColor(e.target.value)}
       />
-      <button onClick={() => send(color)}>Click</button>
+      <button onClick={() => send(color)}>Clicck</button>
       {color}
     </div>
   );
